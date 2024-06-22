@@ -1,5 +1,4 @@
 
-// const sortReturnStatement = require('./plugin/pretitter-plugin-sort-return.js')
 export default {
   // eslintIntegration: true, //启用eslint相同规则
   printWidth: 120, // 每行代码长度（默认80）

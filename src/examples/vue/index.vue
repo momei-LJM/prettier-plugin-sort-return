@@ -5,6 +5,7 @@
 </template>
 
 <script lang="ts">
+import { defineComponent } from 'vue';
 export default defineComponent({
   setup() {
     const NOT_NULL_CONST = "NOT_NULL_CONST";

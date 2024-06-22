@@ -2,17 +2,17 @@ import babelParsers from "prettier/parser-babel";
 
 import typescriptParsers from "prettier/parser-typescript";
 import htmlParsers from "prettier/parser-html";
-import { myPreprocessor, vuePreprocessor } from "./utils/preprocessor";
+import { preprocessor, vuePreprocessor } from "./utils/preprocessor";
 
 export default {
   parsers: {
     babel: {
       ...babelParsers.parsers.babel,
-      preprocess: myPreprocessor,
+      preprocess: preprocessor,
     },
     typescript: {
       ...typescriptParsers.parsers.typescript,
-      preprocess: myPreprocessor,
+      preprocess: preprocessor,
     },
     vue: {
       ...htmlParsers.parsers.vue,

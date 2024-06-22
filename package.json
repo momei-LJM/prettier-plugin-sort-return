@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "main": "index.js",
   "scripts": {
     "build": "tsup-node --config tsup.config.ts  src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "testPrettier": "build && prettier src/test/vue/index.vue --write --config src/test/.prettierrc.js"
+    "test": "pnpm build && vitest",
+    "testPrettier": "pnpm build && prettier src/examples/ts/index.ts --config src/examples/.prettierrc.js",
+    "tsxScript": "tsx src/test/test.test.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,9 +19,12 @@
     "@babel/types": "^7.24.7",
     "@types/babel__generator": "^7.6.8",
     "@types/babel__traverse": "^7.20.6",
+    "@types/node": "^20.14.8",
     "@vue/compiler-sfc": "^3.4.29",
     "prettier": "^3.3.2",
     "tsup": "^8.1.0",
-    "typescript": "^5.5.2"
+    "tsx": "^4.15.7",
+    "typescript": "^5.5.2",
+    "vitest": "^1.6.0"
   }
 }
