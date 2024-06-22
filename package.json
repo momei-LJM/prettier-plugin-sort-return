@@ -1,0 +1,27 @@
+{
+  "name": "prettier-plugin-sort-return",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup-node --config tsup.config.ts  src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "testPrettier": "build && prettier src/test/vue/index.vue --write --config src/test/.prettierrc.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/generator": "^7.24.7",
+    "@babel/parser": "^7.24.7",
+    "@babel/traverse": "^7.24.7",
+    "@babel/types": "^7.24.7",
+    "@types/babel__generator": "^7.6.8",
+    "@types/babel__traverse": "^7.20.6",
+    "@vue/compiler-sfc": "^3.4.29",
+    "prettier": "^3.3.2",
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
+  }
+}
