@@ -16,7 +16,8 @@
     "build": "tsup-node --config tsup.config.ts  src/index.ts",
     "test": "pnpm build && vitest",
     "testPrettier": "pnpm build && prettier src/examples/ts/index.ts --config src/examples/.prettierrc.js",
-    "tsxScript": "tsx src/test/test.test.ts"
+    "tsxScript": "tsx src/test/test.test.ts",
+    "prepublishOnly": "pnpm test"
   },
   "keywords": [
     "prettier",
