@@ -23,5 +23,5 @@ export default {
       }
     }
   ],
-  plugins: ['lib/index.js']
+  plugins: ['lib']
 }

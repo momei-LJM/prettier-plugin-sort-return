@@ -7,10 +7,7 @@
     "lib"
   ],
   "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.cjs"
-    }
+    ".": "./lib/index.js"
   },
   "scripts": {
     "build": "tsup-node --config tsup.config.ts  src/index.ts",
