@@ -27,21 +27,23 @@
   ],
   "author": "momei-LJM",
   "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "@babel/generator": "^7.24.7",
     "@babel/parser": "^7.24.7",
     "@babel/traverse": "^7.24.7",
     "@babel/types": "^7.24.7",
+    "typescript": "^5.5.2"
+  },
+  "devDependencies": {
     "@types/babel__generator": "^7.6.8",
     "@types/babel__traverse": "^7.20.6",
     "@types/node": "^20.14.8",
-    "typescript": "^5.5.2",
     "tsup": "^8.1.0",
     "tsx": "^4.15.7",
     "vitest": "^1.6.0"
   },
   "peerDependencies": {
-    "prettier": "^3.3.2",
-    "@vue/compiler-sfc": "^3.4.29"
+    "prettier": "3.x",
+    "@vue/compiler-sfc": "3.x"
   }
 }
