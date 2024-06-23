@@ -2,16 +2,30 @@
   "name": "prettier-plugin-sort-return",
   "version": "1.0.0",
   "type": "module",
-  "description": "",
+  "description": "An prettier plugin that simply sorts the objects returned by a function",
+  "files": [
+    "lib"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.cjs"
+    }
+  },
   "scripts": {
     "build": "tsup-node --config tsup.config.ts  src/index.ts",
     "test": "pnpm build && vitest",
     "testPrettier": "pnpm build && prettier src/examples/ts/index.ts --config src/examples/.prettierrc.js",
     "tsxScript": "tsx src/test/test.test.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "prettier",
+    "prettier-plugin",
+    "sort",
+    "return"
+  ],
+  "author": "momei-LJM",
+  "license": "MIT",
   "devDependencies": {
     "@babel/generator": "^7.24.7",
     "@babel/parser": "^7.24.7",
@@ -20,11 +34,13 @@
     "@types/babel__generator": "^7.6.8",
     "@types/babel__traverse": "^7.20.6",
     "@types/node": "^20.14.8",
-    "@vue/compiler-sfc": "^3.4.29",
-    "prettier": "^3.3.2",
+    "typescript": "^5.5.2",
     "tsup": "^8.1.0",
     "tsx": "^4.15.7",
-    "typescript": "^5.5.2",
     "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "prettier": "^3.3.2",
+    "@vue/compiler-sfc": "^3.4.29"
   }
 }

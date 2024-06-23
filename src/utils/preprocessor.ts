@@ -2,13 +2,6 @@ import babelParser from "@babel/parser";
 import _traverse from "@babel/traverse";
 import _generate from "@babel/generator";
 import { parse as vueParse } from "@vue/compiler-sfc";
-import {
-  Expression,
-  Identifier,
-  PrivateName,
-  isObjectExpression,
-} from "@babel/types";
-import { isReturnStatement } from "typescript";
 import { ObjectProperty } from "@babel/types";
 const parseESMDefault = <T>(moule: any) => {
   return moule.default ?? (module as T);

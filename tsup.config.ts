@@ -8,5 +8,5 @@ export default defineConfig({
   minify: false,
   splitting: false,
   sourcemap: false,
-  clean: true,
+  clean: false,
 });
