@@ -17,7 +17,7 @@
     "test": "pnpm build && vitest",
     "testPrettier": "pnpm build && prettier src/examples/ts/index.ts --config src/examples/.prettierrc.js",
     "tsxScript": "tsx src/test/test.test.ts",
-    "prepublishOnly": "pnpm test"
+    "prepublishOnly": "pnpm build && vitest run"
   },
   "keywords": [
     "prettier",
