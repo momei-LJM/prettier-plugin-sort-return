@@ -20,6 +20,10 @@ it("test format typescript", async () => {
   const result = await tryFrmatFile(reslovePath("src/examples/ts/index.ts"));
   expect(result).toMatchSnapshot();
 });
+it("test format deepObject", async () => {
+  const result = await tryFrmatFile(reslovePath("src/examples/ts/deepObj.ts"));
+  expect(result).toMatchSnapshot();
+});
 
 it("test format javascript", async () => {
   const result = await tryFrmatFile(reslovePath("src/examples/js/index.js"));
