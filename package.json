@@ -9,6 +9,11 @@
   "exports": {
     ".": "./lib/index.js"
   },
+  "repository": {
+    "url": "https://github.com/momei-LJM/prettier-plugin-sort-return.git",
+    "type": "git",
+    "directory": "lib"
+  },
   "scripts": {
     "build": "tsup-node --config tsup.config.ts  src/index.ts",
     "test": "pnpm build && vitest",
@@ -20,7 +25,10 @@
     "prettier",
     "prettier-plugin",
     "sort",
-    "return"
+    "return",
+    "typescript",
+    "javascript",
+    "vue"
   ],
   "author": "momei-LJM",
   "license": "MIT",
