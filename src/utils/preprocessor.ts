@@ -2,7 +2,7 @@ import babelParser from "@babel/parser";
 import _traverse from "@babel/traverse";
 import _generate from "@babel/generator";
 import { parse as vueParse } from "@vue/compiler-sfc";
-import { ObjectProperty } from "@babel/types";
+import { isSpreadElement, ObjectProperty } from "@babel/types";
 const parseESMDefault = <T>(moule: any) => {
   return moule.default ?? (module as T);
 };
@@ -36,21 +36,34 @@ export function preprocessor(code: string, options: any) {
           Others: [],
         };
 
+        const SpreadElements: Record<string, ObjectProperty> = {};
         for (const p of ps) {
-          const key = p.key as any;
-          if (keyMaps[key]) {
-            keyMaps[key].push(p);
+          if (isSpreadElement(p)) {
+            const idx = ps.findIndex((p) => p === p);
+            SpreadElements[idx] = p;
           } else {
-            keyMaps.Others.push(p);
+            const key = p.key as any;
+            if (keyMaps[key]) {
+              keyMaps[key].push(p);
+            } else {
+              keyMaps.Others.push(p);
+            }
           }
         }
 
+        // sort
         Object.keys(keyMaps).forEach((key) =>
           keyMaps[key].sort((a, b) => sortRule(a, b, key))
         );
-        path.node.properties = Object.values(keyMaps).reduce((prev, cur) => {
+        const newPs = Object.values(keyMaps).reduce((prev, cur) => {
           return [...prev, ...cur];
         }, []);
+
+        // spread operator keep order
+        for (const [idx, node] of Object.entries(SpreadElements)) {
+          newPs.splice(+idx, 0, node);
+        }
+        path.node.properties = newPs;
       }
     },
   });
